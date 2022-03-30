@@ -1,0 +1,15 @@
+<p>
+  <mat-toolbar color="primary" >
+  {{title}}
+  </mat-toolbar>
+</p>
+<nav style="text-align: center;">
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/heroes">Heroes</a>
+</nav>
+<router-outlet></router-outlet>
+<div [ngClass]="isShown ? 'shown' : ''">
+  MESSAGE CENTER<br>
+  <button mat-raised-button color="primary"  (click)="toggleShow()" type="checkbox">Show/Hide Messages</button>
+</div>
+<app-messages *ngIf= "isShown"></app-messages>
